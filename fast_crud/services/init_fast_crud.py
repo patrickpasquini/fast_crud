@@ -7,7 +7,7 @@ def init_fast_crud(app: FastAPI, engine: AsyncDbEngine):
     global model_registry
 
     for model in model_registry:
-        router = APIRouter(tags=[model.__name__])
+        router = APIRouter(tags=[model.__name__], dependencies=model.dependencies)
         model.engine = engine
         model.register_routes(router)
         app.include_router(router)

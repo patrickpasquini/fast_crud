@@ -2,13 +2,14 @@ from .main_filter import MainFilter
 from pyodmongo import DbModel, AsyncDbEngine, DbResponse, ResponsePaginate, Id
 from pyodmongo.queries import mount_query_filter, eq
 from fastapi import APIRouter, HTTPException, status, Request, Depends
-from typing import ClassVar, Optional
+from typing import ClassVar, Optional, Callable
 
 model_registry: list["FastCrud"] = []
 
 
 class FastCrud(DbModel):
     engine: ClassVar[Optional[AsyncDbEngine]] = None
+    dependencies: ClassVar[list[Callable]] = []
     _collection: ClassVar[str]
 
     def __init_subclass__(cls, **kwargs):
