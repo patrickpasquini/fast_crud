@@ -4,7 +4,7 @@ FastCrud is a designed to simplify the creation of CRUD APIs using FastAPI and M
 
 ## Overview
 
-`FastCrud`` allows you to quickly set up CRUD routes for your data models with minimal configuration. By extending the FastCrud class, you can automatically generate standard CRUD endpoints, and you also have the option to add custom routes to meet specific requirements.
+`FastCrud` allows you to quickly set up CRUD routes for your data models with minimal configuration. By extending the FastCrud class, you can automatically generate standard CRUD endpoints, and you also have the option to add custom routes to meet specific requirements.
 
 ## Features
 
